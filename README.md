@@ -1,8 +1,10 @@
 ##simple single-user Slim todo app
 
-use of REST webservice to create/read/update/delete/ tasks
+example definition of REST webservices to create/read/update/delete/ tasks within [Slim  php Framework](https://www.slimframework.com/)
 
-enabled *CORS* header to make it available within your network.
+added *CORS* header to make it available everywhere.
+
+
 
 #install
 
