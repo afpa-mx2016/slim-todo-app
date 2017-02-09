@@ -1,8 +1,10 @@
 ##simple single-user Slim todo app
 
-use of REST webservice to create/read/update/delete/ tasks
+example definition of REST webservice to create/read/update/delete/ tasks
 
-enabled *CORS* header to make it available within your network.
+added *CORS* header to make it available within your network.
+
+use (Slim)[https://www.slimframework.com/] as php Framework
 
 #install
 
@@ -19,29 +21,37 @@ composer install
 `composer start`
 
 
-##available API 
+##available API
 
  - get all todos:
 
- `GET http://localhost:8080/api/v1/todos`
+ ```
+ curl http://localhost:8080/api/v1/todos
+ ```
 
  - get todo with id=6:
 
- `GET http://localhost:8080/api/v1/todos/6`
+ ```
+ curl http://localhost:8080/api/v1/todos/6
+ ```
 
  - update todo with id=6:
 
- `PUT http://localhost:8080/api/v1/todo/6`
+ ```
+ curl -XPUT -d '{"task":"my task", "priority":1}' http://localhost:8080/api/v1/todos/6
+ ```
 
  - delete todo with id=6:
 
- `DELETE http://localhost:8080/api/v1/todo/6`
+ ```
+ curl -XDELETE  http://localhost:8080/api/v1/todos/6
+ ```
 
  - create todo:
 
- `POST http://localhost:8080/api/v1/todo` 
+ ```
+ curl -XPOST -d '{"task":"my task", "priority":1}' http://localhost:8080/api/v1/todos
+ ```
 
 
 Sample mini-js app available at `http://localhost:8080/todos_object.html`
-
-

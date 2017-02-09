@@ -91,7 +91,7 @@ var TodoStore = {
   saveTodo: function(todo){
     //var data = new FormData();
     //data.append('task', todo.task);
-    this.req.open('POST', 'api/v1/todo', true);
+    this.req.open('POST', 'api/v1/todos', true);
     this.req.onload = function () {
       if(this.status == 201){ //response ok
           // do something to response
@@ -110,7 +110,7 @@ var TodoStore = {
   updateTodo: function(todo){
     var data = new FormData();
     data.append('task', todo.task);
-    this.req.open('PUT', 'api/v1/todo/' + todo.id, true);
+    this.req.open('PUT', 'api/v1/todos/' + todo.id, true);
   //  this.req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     this.req.onload = function () {
         if(this.status == 200){ //response ok
@@ -127,7 +127,7 @@ var TodoStore = {
   },
 
   deleteTodo: function(todoId){
-    this.req.open('DELETE', 'api/v1/todo/' + todoId, true);
+    this.req.open('DELETE', 'api/v1/todos/' + todoId, true);
     this.req.onload = function () {
         // do something to response
         if(this.status == 204){

@@ -10,7 +10,7 @@ $app->group('/api/v1', function () use ($app) {
       return $this->response->withJson($todos);
   });
 
-  $app->get('/todo/[{id}]', function ($request, $response, $args) {
+  $app->get('/todos/[{id}]', function ($request, $response, $args) {
          $sth = $this->db->prepare("SELECT * FROM task WHERE id=:id");
         $sth->bindParam("id", $args['id']);
         $sth->execute();
@@ -20,7 +20,7 @@ $app->group('/api/v1', function () use ($app) {
 
 
     $app->get('/todos/search/[{query}]', function ($request, $response, $args) {
-           $sth = $this->db->prepare("SELECT * FROM task WHERE UPPER(task) LIKE :query ORDER BY task");
+           $sth = $this->db->prepare("SELECT * FROM task WHERE task LIKE :query ORDER BY task");
           $query = "%".$args['query']."%";
           $sth->bindParam("query", $query);
           $sth->execute();
@@ -29,7 +29,7 @@ $app->group('/api/v1', function () use ($app) {
       });
 
       // Add a new todo
-    $app->post('/todo', function ($request, $response) {
+    $app->post('/todos', function ($request, $response) {
         $todo = json_decode($request->getBody());
         $sql = "INSERT INTO task (task, priority) VALUES (:task, :priority)";
         $sth = $this->db->prepare($sql);
@@ -44,7 +44,7 @@ $app->group('/api/v1', function () use ($app) {
 
 
     // DELETE a todo with given id
-    $app->delete('/todo/[{id}]', function ($request, $response, $args) {
+    $app->delete('/todos/[{id}]', function ($request, $response, $args) {
          $sth = $this->db->prepare("DELETE FROM task WHERE id=:id");
         $sth->bindParam("id", $args['id']);
         $sth->execute();
@@ -53,7 +53,7 @@ $app->group('/api/v1', function () use ($app) {
 
 
 // Update todo with given id
-    $app->put('/todo/[{id}]', function ($request, $response, $args) {
+    $app->put('/todos/[{id}]', function ($request, $response, $args) {
         //$input = $request->getParsedBody();
         //$this->logger->debug($request->getBody());
         $todo = json_decode($request->getBody());
