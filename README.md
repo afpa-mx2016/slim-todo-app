@@ -2,9 +2,12 @@
 
 example definition of REST webservice to create/read/update/delete/ tasks
 
-added *CORS* header to make it available within your network.
 
-use (Slim)[https://www.slimframework.com/] as php Framework
+ - use [Slim  php Framework](https://www.slimframework.com/) as php Framework
+
+ - added *CORS* header to make it available everywhere.
+
+
 
 #install
 
