@@ -1,30 +1,30 @@
-##simple single-user Slim todo app
+# simple single-user Slim todo app
 
 example definition of REST webservice to create/read/update/delete/ tasks
 
 
- - use [Slim  php Framework](https://www.slimframework.com/) as php Framework
-
- - added *CORS* header to make it available everywhere.
+ - it use [Slim  php Framework](https://www.slimframework.com/) as php Framework
 
 
 
-#install
 
-Prepare your database, see `resources/todo-app.sql` and tune your `src/settings.php`
+## install
 
-Download dependencies ( need `composer` )
+Create a database, and import initial SQL definition file `resources/todo-app.sql`.
+Tune your settings `src/settings.php`
+
+Download dependencies ( need [composer](https://getcomposer.org/) )
 
 ```shell
 composer install
 ```
 
-#run
+## run
 
 `composer start`
 
 
-##available API
+## available API
 
  - get all todos:
 
