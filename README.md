@@ -3,7 +3,7 @@
 example definition of REST webservice to create/read/update/delete/ tasks
 
 
- - it use [Slim  php Framework](https://www.slimframework.com/) as php Framework
+ - it uses [Slim](https://www.slimframework.com/) as php Framework
 
 
 

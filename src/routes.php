@@ -1,6 +1,10 @@
 <?php
 // Routes
 
+$app->get('/', function () use($app) {
+  return $this->response->withRedirect('/index.html');
+});
+
 $app->group('/api/v1', function () use ($app) {
   // get all todos
   $app->get('/todos',function ($request, $response, $args) {

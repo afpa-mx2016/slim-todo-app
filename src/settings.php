@@ -17,7 +17,7 @@ return [
         ],
         "db" => [
             "host" => "127.0.0.1",
-            "dbname" => "tasks",
+            "dbname" => "todo",
             "user" => "task_user",
             "pass" => "task_user"
         ],
